@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 
 namespace ProductStore.Models.DomainModels.EF.DTO.POCO
@@ -13,11 +14,13 @@ namespace ProductStore.Models.DomainModels.EF.DTO.POCO
         }
         #endregion
 
+
+        public DbSet<Category> Categories { get; set; }
+
         #region [- OnConfiguring(DbContextOptionsBuilder optionsBuilder) -]
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
         }
         #endregion
 
@@ -26,6 +29,7 @@ namespace ProductStore.Models.DomainModels.EF.DTO.POCO
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
         #endregion
     }
