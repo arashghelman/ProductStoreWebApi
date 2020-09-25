@@ -6,7 +6,12 @@ namespace ProductStore.Models.DomainModels.EF.DTO.POCO
 {
     public class ProductStoreDbContext : DbContext
     {
-        #region [- ctor -]
+        #region [- ctors -]
+
+        public ProductStoreDbContext()
+        {
+
+        }
 
         public ProductStoreDbContext(DbContextOptions<ProductStoreDbContext> options)
                 : base(options)
@@ -21,6 +26,7 @@ namespace ProductStore.Models.DomainModels.EF.DTO.POCO
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //optionsBuilder.UseSqlServer("Server=tcp:127.0.0.1;Database=ProductStore;User=SA;Password=reallyStrongPwd123;");
         }
         #endregion
 
