@@ -26,7 +26,7 @@ namespace ProductStore.Models.DomainModels.EF.DTO.POCO
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Server=tcp:127.0.0.1;Database=ProductStore;User=SA;Password=reallyStrongPwd123;");
+            optionsBuilder.UseSqlServer("Server=tcp:127.0.0.1;Database=ProductStore;User=SA;Password=reallyStrongPwd123;");
         }
         #endregion
 

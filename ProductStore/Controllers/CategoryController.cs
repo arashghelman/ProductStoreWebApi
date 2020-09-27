@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CacheCow.Server.Core.Mvc;
 using Microsoft.AspNetCore.Mvc;
 using ProductStore.Models.ViewModels;
 
@@ -19,6 +20,7 @@ namespace ProductStore.Controllers
 
 
         [Produces("application/json")]
+        [HttpCacheFactory(500)]
         public async Task<IActionResult> Get_Category()
         {
 
