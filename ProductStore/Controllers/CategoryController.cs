@@ -14,12 +14,20 @@ namespace ProductStore.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
+        #region [- ctor -]
+
         public CategoryController()
         {
             CategoryViewModel = new CategoryViewModel();
         }
+        #endregion
+
+        #region [- props -]
 
         public CategoryViewModel CategoryViewModel { get; set; }
+        #endregion
+        
+        #region [- Get_Category() -]
 
         [Route("wapi/[controller]/Get")]
         [Produces(MediaTypeNames.Application.Json)]
@@ -30,8 +38,12 @@ namespace ProductStore.Controllers
             var categoryList = await CategoryViewModel.Select_Category();
             return Ok(categoryList);
         }
+        #endregion
+
+        #region [- Post_Category([FromBody] JObject jObject) -]
 
         [Route("wapi/[controller]/Post")]
+        [Consumes(MediaTypeNames.Application.Json)]
         public async Task<IActionResult> Post_Category([FromBody] JObject jObject)
         {
 
@@ -47,5 +59,46 @@ namespace ProductStore.Controllers
 
             return Ok();
         }
+        #endregion
+
+        #region [- Delete_Category([FromBody] JObject jObject) -]
+
+        [Route("wapi/[controller]/Delete")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        public async Task<IActionResult> Delete_Category([FromBody] JObject jObject)
+        {
+            if (!ModelState.IsValid)
+            {
+                
+                return BadRequest();
+            }
+
+            var category = jObject["category"].ToObject<CategoryViewModel>();
+
+            await CategoryViewModel.Remove_Category(category);
+
+            return Ok();
+        }
+        #endregion
+
+        #region [- Put_Category([FromBody] JObject jObject) -]
+
+        [Route("wapi/[controller]/Put")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        public async Task<IActionResult> Put_Category([FromBody] JObject jObject)
+        {
+            if (!ModelState.IsValid)
+            {
+                
+                return BadRequest();
+            }
+
+            var category = jObject["category"].ToObject<CategoryViewModel>();
+
+            await CategoryViewModel.Edit_Category(category);
+
+            return Ok();
+        }
+        #endregion
     }
 }

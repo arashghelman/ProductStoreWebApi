@@ -49,7 +49,7 @@ namespace ProductStore.Models.ViewModels
         }
         #endregion
 
-        #region [- Add_Category -]
+        #region [- Add_Category(CategoryViewModel categoryViewModel) -]
 
         public async Task Add_Category(CategoryViewModel categoryViewModel)
         {
@@ -57,7 +57,6 @@ namespace ProductStore.Models.ViewModels
             _category = new Category()
             {
 
-                Id = categoryViewModel.Id,
                 Name = categoryViewModel.Title
             };
 
@@ -65,5 +64,30 @@ namespace ProductStore.Models.ViewModels
         }
         #endregion
 
+        #region [- Edit_Category(CategoryViewModel categoryViewModel) -]
+
+        public async Task Edit_Category(CategoryViewModel categoryViewModel)
+        {
+            _category = new Category()
+            {
+                Id = categoryViewModel.Id,
+                Name = categoryViewModel.Title
+            };
+
+            await _categoryRepository.Update(_category);
+        }
+        #endregion
+    
+        #region [- Remove_Category(CategoryViewModel categoryViewModel) -]
+        public async Task Remove_Category(CategoryViewModel categoryViewModel)
+        {
+            _category = new Category() 
+            {
+                Id = categoryViewModel.Id
+            };
+
+            await _categoryRepository.Delete(_category.Id);
+        }
+        #endregion
     }
 }
