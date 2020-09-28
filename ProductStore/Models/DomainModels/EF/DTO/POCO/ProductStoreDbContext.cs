@@ -16,16 +16,17 @@ namespace ProductStore.Models.DomainModels.EF.DTO.POCO
         public ProductStoreDbContext(DbContextOptions<ProductStoreDbContext> options)
                 : base(options)
         {
+            
         }
         #endregion
-
-
         public DbSet<Category> Categories { get; set; }
+        
 
         #region [- OnConfiguring(DbContextOptionsBuilder optionsBuilder) -]
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer("Server=tcp:127.0.0.1;Database=ProductStore;User=SA;Password=reallyStrongPwd123;");
         }
         #endregion
