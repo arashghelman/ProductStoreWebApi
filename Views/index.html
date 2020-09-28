@@ -33,7 +33,7 @@
     </nav>
     <div class="container col-sm-11">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <form>
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Title</label>
@@ -52,12 +52,17 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlSelect2">Units in Stock</label>
-                      <input type="number" class="form-control col-sm-2" min="1" />
+                      <span class="items-span">Item(s)</span>&nbsp;<span id="value-span"></span>
+                      <input type="range" id="units-range" class="form-control col-sm-12" min="1" max="250"/>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlTextarea1">Example textarea</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
+                      <div class="form-group">
+                        <label>Price per Unit</label>
+                        <input type="number" class="form-control col-sm-3" min="0.00" max="10000.00" step="0.01" />
+                      </div>
+                      <div class="form-group">
+                        <label>Discount</label>
+                        <input type="number" class="form-control col-sm-3" min="0.00" max="10000.00" step="0.01" />
+                      </div>
                   </form>
             </div>
         </div>

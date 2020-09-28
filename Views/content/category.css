@@ -1,3 +1,10 @@
 .container {
     margin-top: 40px;
 }
+.items-span,#value-span {
+    float: right;
+    margin: 2px;
+}
+.form-group {
+    margin-top: 25px;
+}
