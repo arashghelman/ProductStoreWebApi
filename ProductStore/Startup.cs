@@ -28,7 +28,7 @@ namespace ProductStore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options => options.AddPolicy("EnablesCors", builder => 
+            services.AddCors(options => options.AddPolicy("EnableCors", builder => 
             builder.AllowAnyOrigin()
                .AllowAnyMethod()
                .AllowAnyHeader()));
@@ -49,6 +49,8 @@ namespace ProductStore
 
             app.UseHttpsRedirection();
 
+            app.UseCors("EnableCors");
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -58,7 +60,6 @@ namespace ProductStore
                 endpoints.MapControllers();
             });
 
-            app.UseCors("EnablesCors");
         }
     }
 }
