@@ -10,7 +10,6 @@ namespace ProductStore.Models.DomainModels.EF.DTO.Config
 
         public CategoryConfiguration()
         {
-
         }
         #endregion
 

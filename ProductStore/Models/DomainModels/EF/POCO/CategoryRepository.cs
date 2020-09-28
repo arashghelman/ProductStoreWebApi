@@ -21,7 +21,7 @@ namespace ProductStore.Models.DomainModels.EF.POCO
         public async Task<List<Category>> Select()
         {
 
-            using (var context = new ProductStoreDbContext())
+            await using (var context = new ProductStoreDbContext())
             {
                 try
                 {
@@ -53,7 +53,7 @@ namespace ProductStore.Models.DomainModels.EF.POCO
         public async Task Insert(Category category)
         {
 
-            using (var context = new ProductStoreDbContext())
+            await using (var context = new ProductStoreDbContext())
             {
                 try
                 {
@@ -85,7 +85,7 @@ namespace ProductStore.Models.DomainModels.EF.POCO
         public async Task Update(Category category)
         {
 
-            using (var context = new ProductStoreDbContext())
+            await using (var context = new ProductStoreDbContext())
             {
                 try
                 {
@@ -117,7 +117,7 @@ namespace ProductStore.Models.DomainModels.EF.POCO
         public async Task Delete(int? id)
         {
 
-            using (var context = new ProductStoreDbContext())
+            await using (var context = new ProductStoreDbContext())
             {
                 try
                 {
