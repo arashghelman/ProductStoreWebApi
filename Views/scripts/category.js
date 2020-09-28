@@ -3,14 +3,7 @@ function sendAjaxRequest(method, url, data) {
         type: method,
         url: url,
         data: data ? JSON.stringify(data) : null,
-        dataType: "application/json",
-        headers: {'Access-Control-Allow-Origin': '*'},
-        success: function (response) {
-            console.log(response);
-          },
-        error: function (error) {
-            console.log(error);
-        }
+        dataType: "application/json"
     });
 }
 
