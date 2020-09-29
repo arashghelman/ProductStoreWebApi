@@ -29,7 +29,7 @@ namespace ProductStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options => options.AddPolicy("EnableCors", builder => 
-            builder.AllowAnyOrigin()
+            builder.WithOrigins("http://127.0.0.1:5500")
                .AllowAnyMethod()
                .AllowAnyHeader()));
 

@@ -20,6 +20,7 @@ namespace ProductStore.Models.DomainModels.EF.DTO.POCO
         }
         #endregion
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
         
 
         #region [- OnConfiguring(DbContextOptionsBuilder optionsBuilder) -]

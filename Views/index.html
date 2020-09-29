@@ -9,7 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./content/category.css"/>
-    <script src="./scripts/category.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/index.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -41,13 +42,8 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Category</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <select id="category-select" class="form-control" id="exampleFormControlSelect1">
                         <option selected>-- select a category --</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
                       </select>
                     </div>
                     <div class="form-group">
