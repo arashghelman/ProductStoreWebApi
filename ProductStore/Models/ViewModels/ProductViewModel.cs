@@ -22,7 +22,7 @@ public class ProductViewModel
     public byte[] Photo { get; set; }
 
 
-    public async Task<List<ProductViewModel>> Select_Category() 
+    public async Task<List<ProductViewModel>> Select_Product() 
     {
         var productList = await _productRepository.Select();
         var productViewModelList = productList.Select(p => new ProductViewModel()
@@ -31,6 +31,7 @@ public class ProductViewModel
             CategoryId = p.CategoryId,
             CategoryName = p.Category.Name,
             Title = p.Name,
+            UnitsInStock = p.UnitsInStock,
             PricePerUnit = p.UnitPrice,
             Discount = p.Discount,
             Photo = p.Photo
@@ -39,14 +40,15 @@ public class ProductViewModel
         return productViewModelList;
     }
 
-    public async Task Add_Category(ProductViewModel productViewModel) {
+    public async Task Add_Product(ProductViewModel productViewModel) {
         
         _product = new Product() {
-            CategoryId = CategoryId,
-            Name = Title,
-            UnitPrice = PricePerUnit,
-            Discount = Discount,
-            Photo = Photo
+            CategoryId = productViewModel.CategoryId,
+            Name = productViewModel.Title,
+            UnitsInStock = productViewModel.UnitsInStock,
+            UnitPrice = productViewModel.PricePerUnit,
+            Discount = productViewModel.Discount,
+            Photo = productViewModel.Photo
         };
 
         await _productRepository.Insert(_product);

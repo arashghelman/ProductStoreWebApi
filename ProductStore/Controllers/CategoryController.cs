@@ -12,6 +12,7 @@ using ProductStore.Models.ViewModels;
 namespace ProductStore.Controllers
 {
     [ApiController]
+    [Route("wapi/[controller]")]
     public class CategoryController : ControllerBase
     {
         #region [- ctor -]
@@ -29,9 +30,8 @@ namespace ProductStore.Controllers
         
         #region [- Get_Category() -]
 
-        [Route("wapi/[controller]/Get")]
+        [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
-        [HttpCacheFactory(500)]
         public async Task<IActionResult> Get_Category()
         {
 
@@ -42,7 +42,7 @@ namespace ProductStore.Controllers
 
         #region [- Post_Category([FromBody] JObject jObject) -]
 
-        [Route("wapi/[controller]/Post")]
+        [HttpPost]
         [Consumes(MediaTypeNames.Application.Json)]
         public async Task<IActionResult> Post_Category([FromBody] JObject jObject)
         {
@@ -63,7 +63,7 @@ namespace ProductStore.Controllers
 
         #region [- Delete_Category([FromBody] JObject jObject) -]
 
-        [Route("wapi/[controller]/Delete")]
+        [HttpDelete]
         [Consumes(MediaTypeNames.Application.Json)]
         public async Task<IActionResult> Delete_Category([FromBody] JObject jObject)
         {
@@ -83,7 +83,7 @@ namespace ProductStore.Controllers
 
         #region [- Put_Category([FromBody] JObject jObject) -]
 
-        [Route("wapi/[controller]/Put")]
+        [HttpPut]
         [Consumes(MediaTypeNames.Application.Json)]
         public async Task<IActionResult> Put_Category([FromBody] JObject jObject)
         {

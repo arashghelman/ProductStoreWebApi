@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 namespace ProductStore.Controllers
 {
     [ApiController]
+    [Route("wapi/[controller]")]
     public class ProductController : ControllerBase
     {
         public ProductController()
@@ -16,15 +17,19 @@ namespace ProductStore.Controllers
 
         public ProductViewModel ProductViewModel { get; set; }
 
+        [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
-        public async Task<IActionResult> Get_Category()
+        public async Task<IActionResult> Get_Product()
         {
 
-            var productList = await ProductViewModel.Select_Category();
+            var productList = await ProductViewModel.Select_Product();
             return Ok(productList);
         }
 
-        public async Task<IActionResult> Post_Category([FromBody] JObject jObject) {
+        [HttpPost]
+        [Consumes(MediaTypeNames.Application.Json)]
+        public async Task<IActionResult> Post_Product([FromBody] JObject jObject) 
+        {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
@@ -32,7 +37,7 @@ namespace ProductStore.Controllers
             
             var product = jObject["product"].ToObject<ProductViewModel>();
 
-            await ProductViewModel.Add_Category(product);
+            await ProductViewModel.Add_Product(product);
 
             return Ok();
         }
