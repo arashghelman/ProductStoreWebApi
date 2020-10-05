@@ -19,12 +19,40 @@ public class ProductRepository
         {
             try
             {
-                var categoryList = await context.Products.Include(p => p.Category)
+                var productList = await context.Products.Include(p => p.Category)
                     .AsNoTracking()
                     .ToListAsync();
-                return categoryList;
+                return productList;
             }
             catch (Exception ex) 
+            {
+                
+                throw ex;
+            }
+            finally {
+                if (context != null)
+                {
+                    await context.DisposeAsync();
+                }
+            }
+        }
+    }
+    #endregion
+
+    #region [- SelectById(int id) -]
+    public async Task<Product> SelectById(int id) 
+    {
+        await using (var context = new ProductStoreDbContext())
+        {
+            try
+            {
+                var product = await context.Products
+                    .Include(p => p.Category)
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(p => p.Id == id);
+                return product;
+            }
+            catch (Exception ex)
             {
                 
                 throw ex;

@@ -1,16 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
 .container {
     margin-top: 40px;
 }
-.items-span,#value-span {
+
+.title-div {
+    margin-top: 25px;
+}
+.category-div, .units-div, .button-div {
+    margin-top: 30px;
+}
+.price-div {
+    margin-top: 25px;
+}
+.file-div {
+    margin-top: 40px;
+}
+.range-value {
     float: right;
     margin: 2px;
 }
-.form-group {
-    margin-top: 25px;
-}
 .table-div {
     margin-top: 55px;
+    font-family: 'Nunito', sans-serif;
 }
 .form-div, .table-div {
     display: inline;
 }
+
+.discount-div {
+    float: left;
+}
+
+#details-button {
+    border: none;
+    background-color: transparent;
+    color: rgb(54, 149, 197);
+}
+#details-button:hover, #details-button:active {
+    text-decoration: underline;
+}
+.details-div {
+    background-color: rgb(57, 61, 66);
+    margin-top: 40px;
+}
+.details-div > h2 {
+    color: white;
+    margin: 4px;
+    padding-left: 20px;
+    font-size: 25px;
+}
+img {
+    max-width:180px;
+}
+thead > tr > .title-header {
+    padding-left: 25px;
+}
+thead > tr > th {
+    font-size: 18px;
+}
+

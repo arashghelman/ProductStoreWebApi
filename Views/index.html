@@ -36,64 +36,67 @@
         <div class="row">
             <div class="form-div col-sm-4">
                 <form>
-                    <div class="form-group col-sm-12">
+                    <div class="form-group row col-sm-12 title-div">
                       <label for="product-title">Title</label>
                       <input id="product-title" type="text" class="form-control" placeholder="Title for your product">
                     </div>
-                    <div class="form-group col-sm-12">
+                    <div class="form-group row col-sm-12 category-div">
                       <label for="category-select">Category</label>
                       <select id="category-select" class="form-control">
                         <option selected>-- select a category --</option>
                       </select>
                     </div>
-                    <div class="form-group col-sm-12">
+                    <div class="form-group row col-sm-12 units-div">
                       <label for="product-unit">Units in Stock</label>
-                      <span class="items-span">Item(s)</span>&nbsp;<span id="value-span"></span>
+                      <span id="value-span"></span><span class="items-span">Item(s)</span>
                       <input type="range" id="product-unit" class="form-control col-sm-12" min="1" max="250"/>
                     </div>
-                      <div class="form-group col-sm-4">
+                    <div class="row price-div">
+                      <div class="input-group col-sm-5">
                         <label for="product-price">Price per Unit</label>
-                        <input id="product-price" type="number" class="form-control" min="0.00" max="10000.00" step="0.01" />
+                        <div class="input-group-append">
+                          <input id="product-price" type="number" class="form-control" min="0.00" max="10000.00" step="0.01" />
+                          <span class="input-group-text">$</span>
+                        </div>
                       </div>
-                      <div class="form-group col-sm-4">
+                      <div class="input-group col-sm-5">
                         <label for="product-discount">Discount</label>
-                        <input id="product-discount" type="number" class="form-control" min="0.00" max="10000.00" step="0.01" />
+                        <div class="input-group-append">
+                          <input id="product-discount" type="number" class="form-control" min="0.00" max="10000.00" step="0.01" />
+                          <span class="input-group-text">$</span>
+                        </div>
                       </div>
+                    </div>
+                    <div class="input-group row col-sm-12 file-div">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="product-photo" aria-describedby="product-photo">
+                        <label class="custom-file-label" for="myInput">Choose file</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 row button-div">
+                      <button id="btn-add" type="button" class="col-sm-4 btn btn-outline-dark">Add</button>
+                    </div>
                   </form>
             </div>
             <div class="col-sm-1"></div>
             <div class="table-div col-sm-7">
-              <table class="table">
+              <table id="product-table" class="table">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">Title</th>
+                    <th class="title-header" scope="col">Title</th>
                     <th scope="col">Category</th>
                     <th scope="col">Price</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
                 </tbody>
               </table>
-              
+              <div class="col-sm-12">
+                <div id="details" class="row details-div">
+                  <h2>Product</h2>
+                </div>
+              </div>
             </div> 
         </div>
     </div>
