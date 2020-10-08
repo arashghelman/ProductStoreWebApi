@@ -55,7 +55,10 @@ public class ProductViewModel
             Id = p.Id,
             Title = p.Name,
             CategoryName = p.Category.Name,
-            PricePerUnit = p.UnitPrice
+            UnitsInStock = p.UnitsInStock,
+            PricePerUnit = p.UnitPrice,
+            Discount = p.Discount,
+            Photo = p.Photo
         }).ToList();
     
 

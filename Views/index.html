@@ -48,22 +48,23 @@
                     </div>
                     <div class="form-group row col-sm-12 units-div">
                       <label for="product-unit">Units in Stock</label>
+                      <div class="col-sm-6"></div>
                       <span id="value-span"></span><span class="items-span">Item(s)</span>
                       <input type="range" id="product-unit" class="form-control col-sm-12" min="1" max="250"/>
                     </div>
                     <div class="row price-div">
                       <div class="input-group col-sm-5">
                         <label for="product-price">Price per Unit</label>
-                        <div class="input-group-append">
-                          <input id="product-price" type="number" class="form-control" min="0.00" max="10000.00" step="0.01" />
+                        <div class="input-group-prepend">
                           <span class="input-group-text">$</span>
+                          <input id="product-price" type="number" class="form-control" min="0.00" max="10000.00" step="0.01" />
                         </div>
                       </div>
                       <div class="input-group col-sm-5">
                         <label for="product-discount">Discount</label>
-                        <div class="input-group-append">
-                          <input id="product-discount" type="number" class="form-control" min="0.00" max="10000.00" step="0.01" />
+                        <div class="input-group-prepend">
                           <span class="input-group-text">$</span>
+                          <input id="product-discount" type="number" class="form-control" min="0.00" max="10000.00" step="0.01" />
                         </div>
                       </div>
                     </div>
@@ -92,9 +93,26 @@
                 <tbody>
                 </tbody>
               </table>
-              <div class="col-sm-12">
-                <div id="details" class="row details-div">
-                  <h2>Product</h2>
+              <div class="col-sm-12" id="details">
+                <div class="row details-div">
+                  <h2 id="detail-title"></h2>
+                </div>
+                <div class="col-sm-12">
+                  <div class="row">
+                    <span class="detail-span">Category:</span>&nbsp;<span id="detail-category"></span>
+                  </div>
+                  <div class="row">
+                    <span class="detail-span">Units in Stock:</span>&nbsp;<span id="detail-units"></span>&nbsp;<span>Item(s)</span>
+                  </div>
+                  <div class="row">
+                    <span class="detail-span">Price:</span>&nbsp;<span>$</span><span id="detail-price"></span>
+                  </div>
+                  <div class="row">
+                    <span class="detail-span">Discount:</span>&nbsp;<span>$</span><span id="detail-discount"></span>
+                  </div>
+                </div>
+                <div class="row detail-image-div">
+                  <img id="detail-image" />
                 </div>
               </div>
             </div> 

@@ -59,4 +59,14 @@ thead > tr > .title-header {
 thead > tr > th {
     font-size: 18px;
 }
+.detail-span {
+    font-weight: bolder;
+    font-size: 17px;
+}
+.detail-image-div {
+    float: right;
+}
+.btn-outline-dark {
+    margin: auto;
+}
 
