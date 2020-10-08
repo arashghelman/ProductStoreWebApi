@@ -7,10 +7,14 @@ using ProductStore.Models.DomainModels.EF.DTO.POCO;
 
 public class ProductRepository
 {
+
+    #region [- ctor -]
+    
     public ProductRepository()
     {
         
     }
+    #endregion
 
     #region [- Select() -]
 
